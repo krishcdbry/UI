@@ -1,0 +1,64 @@
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
+<center>
+<div id="tt" style="width:1100px;background:url('image/df.jpg');background-repeat:no-repeat;background-size:cover;background-attachemnt:fixed;background-position:10px;">
+<div id="chartdiv"></div>
+</div>		
+<script>
+
+var chart = AmCharts.makeChart("chartdiv", {
+    "type": "pie",	
+	"theme": "dark",
+    "legend": {
+        "markerType": "circle",
+        "position": "right",
+		"marginRight": 80,		
+		"autoMargins": false
+    },
+    "dataProvider": [{
+        "country": "HTML 4,5",
+        "litres": 250
+    }, {
+        "country": "CSS 3",
+        "litres": 190
+    }, {
+        "country": "PHP , Mysql",
+        "litres": 155
+    }, {
+        "country": "Jquery",
+        "litres": 109
+    }, {
+        "country": "Javascript",
+        "litres": 101
+    }, {
+        "country": "Perl , Python",
+        "litres": 25
+    }, {
+        "country": "NodeJs",
+        "litres": 10
+    }],
+    "valueField": "litres",
+    "titleField": "country",
+    "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+    "exportConfig": {
+        "menuTop":"0px",
+        "menuItems": [{
+            "icon": '/lib/3/images/export.png',
+            "format": 'png'
+        }]
+    }
+});
+</script>
+<style>
+
+  #tt > #chartdiv {
+  background-color:rgba(0,0,0,0.7);
+  color:#ffffff;	
+	width		: 1100px;
+	height		: 400px;
+	font-size	: 11px;
+
+}	
+</style>
+

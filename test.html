@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+
+function k(eve,id,val,pat){
+  var tEve = this.eve || window.event;
+  var key = tEve.keyCode || eve.which;
+  if(key.which==40 || key.which==17|| key.which==38){ 
+  var pos = getCaretPosition(this);setCaretPosition(this,pos); }
+  else if(key==40||key==37||key==38||key==17||key==8||key==39||key==46){
+  return;
+  }
+  document.getElementById(id).value = val.replace(pat,"");}
+
+</script>
+
+<input type="text" id="k" onkeyup="k(event,'k',this.value,/[^a-zA-Z0-9]/g)">
+
+</html>
